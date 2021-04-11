@@ -36,21 +36,20 @@ class ListingItem extends PureComponent {
 
     return (
       <div className="ListingCard">
-        <div className="ListingCard-Photo">
+        <div className="ListingCard_Photo">
           {/* {listing_photos.map((photos, i) => (
             <img src={photos.url} alt="listing photos" key={i} />
           ))} */}
         </div>
-        <div className="ListingCard-Type">{property_type} FOR SALE</div>
-        <div className="ListingCard-Price">{listing_price}</div>
-        <div className="ListingCard-Details">{address_line1}</div>
-        <div className="ListingCard-Details">{address_line2}</div>
-        <div className="ListingCard-Details">
+        <div className="ListingCard_Type">{property_type} FOR SALE</div>
+        <div className="ListingCard_Price">{listing_price}</div>
+        <div className="ListingCard_Details">{address_line1}</div>
+        <div className="ListingCard_Details">{address_line2}</div>
+        <div className="ListingCard_Details">
           {attributes_bed}&nbsp;&nbsp;{attributes_bath}&nbsp;&nbsp;
           {attributes_sqft}
         </div>
         <hr />
-        <br />
       </div>
     );
   }

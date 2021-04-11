@@ -1,0 +1,88 @@
+.ListingCarousel {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ListingCarousel_Header {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 80px;
+}
+
+.ListingCarousel_Header_Row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.ListingCarousel_Header_Label {
+    flex: 1;
+    text-align: left;
+    font-weight: 800;
+    font-size: 1.7em;
+    color: #1A2258;
+    margin-left: 15px;
+    margin-right: auto;
+}
+
+.ListingCarousel_Header_Link {
+    flex: 1;
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #216BFF;
+    margin-right: 15px;
+    margin-left: auto;
+    text-decoration: none;
+}
+
+.ListingCarousel_Header_Link:hover {
+    cursor: pointer;
+    color: #0042c7;
+    transition: all 0.2s ease-in-out;
+}
+
+.ListingCarousel_Container {
+    display: flex;
+    flex-direction: column;
+}
+
+.ListingCarousel_Container_Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.ListingCarousel_Item {
+    min-height: 150px;
+    max-width: 300px;
+    flex: calc(960Px / 4);
+    justify-content: center;
+    margin: 20px 20px;
+}
+
+.ListingCarousel_Footer {
+    display: flex;
+    flex-direction: column;
+    margin: 50px 80px;
+}
+
+.ListingCarousel_Footer_Wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.ListingCarousel_Button {
+    text-align: right;
+    font-size: 1.5em;
+    font-weight: 500;
+    color: #216BFF;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.ListingCarousel_Button:hover {
+    cursor: pointer;
+    color: #0042c7;
+    transition: all 0.2s ease-in-out;
+}

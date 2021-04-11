@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import ListingItem from "./ListingItem";
 import { fetchData } from "../actions/listings";
+import "./ListingCarousel.css";
 
 function mapStateToProps(state) {
   return {
@@ -28,12 +29,15 @@ class ListingCarousel extends Component {
   constructor(props) {
     super();
     this.state = {
+      index: 0,
       listings: props.listings,
       isTest: [],
       firstRender:
         typeof props.firstRender !== "undefined" ? props.firstRender : true,
     };
     this.updateListing = this.updateListing.bind(this);
+    this.nextListing = this.nextListing.bind(this);
+    this.previousListing = this.previousListing.bind(this);
   }
 
   componentWillUpdate(nextProps) {
@@ -62,6 +66,34 @@ class ListingCarousel extends Component {
     });
   }
 
+  //update the current listings to show the next listings
+  nextListing() {
+    //display the current listings if it is within the limit of 4 listings
+    if (this.state.index >= this.state.listings.length - 4) {
+      this.props.fetchData();
+    }
+
+    //update the listing if the current index of a state is more than 4
+    this.setState({
+      ...this.state,
+      index:
+        this.state.index + 4 >= this.state.listings.length
+          ? this.state.index + 4 - this.state.listings.length
+          : this.state.index + 4,
+    });
+  }
+
+  //update the current listings to show the previous listings
+  previousListing() {
+    this.setState({
+      ...this.state,
+      index:
+        this.state.index - 4 >= 0
+          ? this.state.index - 4
+          : this.state.index - 4 + this.state.listings.length,
+    });
+  }
+
   render() {
     const { listings } = this.state;
 
@@ -82,7 +114,54 @@ class ListingCarousel extends Component {
       );
     });
 
-    return <div>{items}</div>;
+    // buffer array with 4 slots to display 4 listings on the page
+    // items get replaced once state is changed to show new listings
+    let listings_arr = [];
+    let num_Slot = 4;
+    for (let i = 0; i < num_Slot; i++) {
+      if (this.state.index < items.length) {
+        listings_arr.push(items[this.state.index + i]);
+      } else {
+        listings_arr.push(items[(this.state.index + i) % items.length]);
+      }
+    }
+
+    // carousel formatting with a grid (similar to what i noticed in 99.co)
+    return (
+      <div className="ListingCarousel">
+        <div className="ListingCarousel_Header">
+          <div className="ListingCarousel_Header_Row">
+            <div className="ListingCarousel_Header_Label">
+              Listings with videos
+            </div>
+            <a
+              href="https://www.99.co/singapore/sale?property_segments=residential"
+              className="ListingCarousel_Header_Link"
+            >
+              See all
+            </a>
+          </div>
+        </div>
+        <div className="ListingCarousel_Container">
+          <div className="ListingCarousel_Container_Wrapper">
+            <div className="ListingCarousel_Item">{listings_arr[0]}</div>
+            <div className="ListingCarousel_Item">{listings_arr[1]}</div>
+            <div className="ListingCarousel_Item">{listings_arr[2]}</div>
+            <div className="ListingCarousel_Item">{listings_arr[3]}</div>
+          </div>
+        </div>
+        <div className="ListingCarousel_Footer">
+          <div className="ListingCarousel_Footer_Wrapper">
+            <div className="ListingCarousel_Button">
+              <div onClick={this.previousListing}>Previous</div>
+            </div>
+            <div className="ListingCarousel_Button">
+              <div onClick={this.nextListing}>Next</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
   }
 }
 

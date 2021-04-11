@@ -3,14 +3,14 @@
     text-align: left;
 }
 
-.ListingCard-Type {
+.ListingCard_Type {
     color: #FF72B6;
     font-weight: 600;
     font-size: .8em;
     margin-top: 18px;
 }
 
-.ListingCard-Price {
+.ListingCard_Price {
     color: #1A2258;
     font-weight: 600;
     font-size: 1.2em;
@@ -19,7 +19,7 @@
     letter-spacing: 0.08em;
 }
 
-.ListingCard-Details {
+.ListingCard_Details {
     color: #1A2258;
     font-weight: 400;
     font-size: 0.9em;
