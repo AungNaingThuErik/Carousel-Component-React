@@ -1,27 +1,18 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-class ListingImageCarousel extends Component {
-  constructor(props) {
-    super(props);
+const ListingImageCarousel = (props) => {
+  const [state, updateState] = useState({
+    current_Photo_Index: 0,
+  });
+  console.log("Props" + props.listing);
 
-    // this.state = {
-    //   currentPhotoIndex: 0,
-    //   currentDotIndex: 0,
-    // };
-  }
-  //   getPhoto() {
-  //     this.props.map((photos) => photos.url);
-  //   }
-  render() {
-    // const listingPhotos = this.props.map((photos) => photos.url);
+  const listing_Photos = props.photos.map((images) => images.url);
+  const current_Photo_Display = listing_Photos[state.currentPhotoIndex];
+  return (
+    <div>
+      <img src={current_Photo_Display} alt="Listing Photos" />
+    </div>
+  );
+};
 
-    return (
-      <div>
-        {this.props.listing.photos.map((pic, i) => (
-          <img src={pic.url} alt="listing photos" key={i} />
-        ))}
-      </div>
-    );
-  }
-}
 export default ListingImageCarousel;
