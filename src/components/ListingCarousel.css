@@ -44,6 +44,7 @@
 .ListingCarousel_Container {
     display: flex;
     flex-direction: column;
+    margin: 0 80px;
 }
 
 .ListingCarousel_Container_Wrapper {
@@ -57,7 +58,7 @@
     max-width: 300px;
     flex: calc(960Px / 4);
     justify-content: center;
-    margin: 20px 20px;
+    margin: 10px 20px;
 }
 
 .ListingCarousel_Footer {

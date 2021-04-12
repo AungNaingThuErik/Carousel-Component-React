@@ -1,0 +1,79 @@
+.ListingImages_Container {
+    border-radius: 3px;
+    height: 200px;
+    width: 270px;
+    position: relative;
+}
+
+.ListingImages {
+    border-radius: 3px;
+    height: 200px;
+    width: 270px;
+    object-fit: cover;
+}
+
+.ListingImages_Arrow {
+    border-radius: 3px;
+    position: absolute;
+    height: 200px;
+    width: 270px;
+    top: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    transition: opacity 0.3s;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    -webkit-transition: opacity 0.3s;
+    opacity: 0;
+    z-index: 2;
+}
+
+.ListingImages_Arrow:hover {
+    transition: opacity 0.3s;
+    -webkit-transition: opacity 0.3s;
+    opacity: 1;
+}
+
+.ListingImages_Arrow_Left {
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+    background-image: linear-gradient(to left, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.260));
+}
+
+.ListingImages_Arrow_Right {
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.260));
+}
+
+.ListingImages_Arrow_Img {
+    height: 30px;
+    width: 30px;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+.ListingImages_Arrow_Img:hover {
+    cursor: pointer;
+}
+
+.ListingImages_Dot {
+    height: 200px;
+    width: 270px;
+    position: absolute;
+    top: 0;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    z-index: 1;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}

@@ -73,7 +73,7 @@ class ListingCarousel extends Component {
       this.props.fetchData();
     }
 
-    //update the listing if the current index of a state is more than 4
+    //update the listing index to the next 4 index
     this.setState({
       ...this.state,
       index:
@@ -114,7 +114,7 @@ class ListingCarousel extends Component {
       );
     });
 
-    // buffer array with 4 slots to display 4 listings on the page
+    // listing array with 4 slots to display 4 listings on the page
     // items get replaced once state is changed to show new listings
     let listings_arr = [];
     let num_Slot = 4;
@@ -126,7 +126,6 @@ class ListingCarousel extends Component {
       }
     }
 
-    // carousel formatting with a grid (similar to what i noticed in 99.co)
     return (
       <div className="ListingCarousel">
         <div className="ListingCarousel_Header">
