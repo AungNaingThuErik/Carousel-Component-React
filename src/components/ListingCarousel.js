@@ -66,14 +66,14 @@ class ListingCarousel extends Component {
     });
   }
 
-  //update the current listings to show the next listings
+  //Update the current listings to show the next listings
   nextListing() {
     //display the current listings if it is within the limit of 4 listings
     if (this.state.index >= this.state.listings.length - 4) {
       this.props.fetchData();
     }
 
-    //update the listing index to the next 4 index
+    //Update the listing index to the next 4 index
     this.setState({
       ...this.state,
       index:
@@ -83,7 +83,7 @@ class ListingCarousel extends Component {
     });
   }
 
-  //update the current listings to show the previous listings
+  //Update the current listings to show the previous listings
   previousListing() {
     this.setState({
       ...this.state,
@@ -114,8 +114,8 @@ class ListingCarousel extends Component {
       );
     });
 
-    // listing array with 4 slots to display 4 listings on the page
-    // items get replaced once state is changed to show new listings
+    // Listing array with slots to display 4 listings on the page
+    // Items get replaced once state is changed to show new listings
     let listings_arr = [];
     let num_Slot = 4;
     for (let i = 0; i < num_Slot; i++) {

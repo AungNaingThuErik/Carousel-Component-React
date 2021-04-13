@@ -41,3 +41,9 @@ The listing data shape is quite complicated but you will mainly be interested in
 ## v1.1.0
 - An app shell that provides Redux infra & HMR support
 - Prefetched listings API data
+
+
+## Hosted Link
+- The project is hosted on Netlify
+
+[99.co Image Carousl](https://imagecarousel99co.netlify.app/) 

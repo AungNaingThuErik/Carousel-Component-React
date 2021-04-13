@@ -1,7 +1,7 @@
 import React from "react";
 import "./ListingImageDot.css";
 
-//three types of dot styles; active dots, normal dots, and dots on the side
+//Three types of dot styles; active dots, normal dots, and dots on the side
 const ListingPhotosDot = (props) => {
   if (props.selected) {
     return <div className="Active_Dot"></div>;
